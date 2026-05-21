@@ -1,0 +1,247 @@
+.member-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.member-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: currentColor;
+}
+
+.member-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Status-specific styles */
+.member-card.status-active {
+  border-left: 4px solid #10b981;
+}
+
+.member-card.status-active::before {
+  color: #10b981;
+}
+
+.member-card.status-expired {
+  border-left: 4px solid #ef4444;
+  opacity: 0.85;
+}
+
+.member-card.status-expired::before {
+  color: #ef4444;
+}
+
+.member-card.status-partial {
+  border-left: 4px solid #f59e0b;
+}
+
+.member-card.status-partial::before {
+  color: #f59e0b;
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.member-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-text {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.member-title {
+  flex: 1;
+}
+
+.member-name {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.status-active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.status-expired {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-badge.status-partial {
+  background: #fed7aa;
+  color: #92400e;
+}
+
+/* Card Body */
+.card-body {
+  margin-bottom: 20px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.membership-type {
+  background: #e0e7ff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  color: #4338ca;
+  font-weight: 600;
+}
+
+.expiry-date {
+  color: #6b7280;
+}
+
+.partial-amount {
+  background: #fffbeb;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.amount {
+  color: #d97706;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-view, .btn-renew {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-view {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.btn-view:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+.btn-renew {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-renew:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+}
+
+.btn-view:active, .btn-renew:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .member-card {
+    padding: 16px;
+  }
+  
+  .member-name {
+    font-size: 18px;
+  }
+  
+  .member-avatar {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .avatar-text {
+    font-size: 20px;
+  }
+  
+  .info-label, .info-value {
+    font-size: 12px;
+  }
+  
+  .btn-view, .btn-renew {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
